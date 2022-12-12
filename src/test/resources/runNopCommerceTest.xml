@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="LiveGuru">
+<suite name="NopCommerce">
 
     <parameter name="evnName" value="local" />
 
@@ -18,7 +18,7 @@
 <!--            <package name="com.user" />-->
 <!--        </packages>-->
         <classes>
-            <class name="com.admin.Admin_04_Search_Select_Checkbox"/>
+            <class name="com.user.User_03_My_Account"/>
         </classes>
     </test>
 
