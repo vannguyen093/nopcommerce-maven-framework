@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
 public class User_03_My_Account extends BaseTest {
 
     private WebDriver driver;
-    private String emailAddress, addressessEmailAddress;
+    private String emailAddress, addressessEmailAddress, reviewTitle, reviewText;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
@@ -25,6 +25,10 @@ public class User_03_My_Account extends BaseTest {
     UserCustomerInfoPO userCustomerInfoPage;
     UserAddressesPO userAddressesPage;
     UserChangePassPO userChangePassPage;
+    UserProductPO userProductPage;
+    UserProductDetailPO userProductDetailPage;
+    UserProductReviewPO userProductReviewPage;
+    UserMyProductReviewsPO userMyProductReviewsPage;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass
@@ -40,8 +44,10 @@ public class User_03_My_Account extends BaseTest {
 
         emailAddress = userData.getEditEmail() + generateFakeNumber() + "@gmail.com";
         addressessEmailAddress = userData.getAddressEmail() + generateFakeNumber() + "@gmail.com";
+        reviewTitle = "My Review Title " + generateFakeNumber();
+        reviewText = "My Review Text " + generateFakeNumber();
 
-        userHomePage.clickToHeaderLinkByText(driver, "Register");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
         userRegisterPage.selectGenderRadioByText(userData.getGender());
         userRegisterPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getFirstName());
@@ -61,7 +67,7 @@ public class User_03_My_Account extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Update Info");
 
         ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 01: Click to 'My account' link");
-        userHomePage.clickToHeaderLinkByText(driver, "My account");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-account");
         userCustomerInfoPage = PageGenerateManager.getUserCustomerInfoPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 02: Select '"+ userData.getEditGender() + "' at the 'Gender' radio");
@@ -176,7 +182,7 @@ public class User_03_My_Account extends BaseTest {
         Assert.assertEquals(userAddressesPage.getAddressesTextByClass("country"), userData.getAddressCountry());
 
         ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 21: Click the 'Log out' link");
-        userAddressesPage.clickToHeaderLinkByText(driver,"Log out");
+        userAddressesPage.clickToHeaderLinkByText(driver, "ico-logout");
         userHomePage = PageGenerateManager.getUserHomePage(driver);
     }
 
@@ -185,7 +191,7 @@ public class User_03_My_Account extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Change Password");
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 01: Click to 'Log in' link");
-        userHomePage.clickToHeaderLinkByText(driver,"Log in");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-login");
         userLoginPage = PageGenerateManager.getUserLoginPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password- Step 02: Input '" + emailAddress + "' into the 'Email' text box");
@@ -199,7 +205,7 @@ public class User_03_My_Account extends BaseTest {
         userHomePage = PageGenerateManager.getUserHomePage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 05: Click to 'My account' link");
-        userHomePage.clickToHeaderLinkByText(driver, "My account");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-account");
         userCustomerInfoPage = PageGenerateManager.getUserCustomerInfoPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 06: Click to 'Change password' link at sidebar menu");
@@ -219,17 +225,17 @@ public class User_03_My_Account extends BaseTest {
         userChangePassPage.clickToChangePassButton();
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 11: Verify the change password successful is displayed");
-        Assert.assertEquals(userChangePassPage.getSuccessMessageText(), "Password was changed");
+        Assert.assertEquals(userChangePassPage.getSuccessMessageText(driver), "Password was changed");
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 12: Click the 'Close' button at success message row");
-        userChangePassPage.clickToCloseMessageButton();
+        userChangePassPage.clickToCloseMessageButton(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 13: Click the 'Log out' link");
-        userChangePassPage.clickToHeaderLinkByText(driver,"Log out");
+        userChangePassPage.clickToHeaderLinkByText(driver, "ico-logout");
         userHomePage = PageGenerateManager.getUserHomePage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 14: Click to 'Login' link");
-        userHomePage.clickToHeaderLinkByText(driver, "Log in");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-login");
         userLoginPage = PageGenerateManager.getUserLoginPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 15: Input '" + emailAddress + "' into the 'Email' text box");
@@ -245,7 +251,7 @@ public class User_03_My_Account extends BaseTest {
         Assert.assertEquals(userLoginPage.getUnsuccessfulErrorMessageText(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 19: Click to 'Login' link");
-        userLoginPage.clickToHeaderLinkByText(driver, "Log in");
+        userLoginPage.clickToHeaderLinkByText(driver, "ico-login");
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password- Step 20: Input '" + emailAddress + "' into the 'Email' text box");
         userLoginPage.inputToLoginTextboxByTextboxId("Email", emailAddress);
@@ -259,6 +265,47 @@ public class User_03_My_Account extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 23: Verify that the homepage title is displayed");
         Assert.assertEquals(userHomePage.getHomePageTitle(), "Welcome to our store");
+    }
+
+    @Test
+    public void TC_04_Produc_review(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Add a prodcut review and verify it displayed at My Account Review");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 01: Click to 'Desktops' sub-menu at header menu");
+        userHomePage.clickToSubHeaderMenuByText(driver, "Computers","Desktops");
+        userProductPage = PageGenerateManager.getUserProductPage(driver);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 02: Click to Product title named 'Build your own computer'");
+        userProductDetailPage = userProductPage.clickToProductTitleByText("Build your own computer");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 03: Verify that Product Detail title named containing 'Build your own computer'");
+        Assert.assertEquals(userProductDetailPage.getProductTitleText(), "Build your own computer");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 04: Click to Product title named 'Build your own computer'");
+        userProductReviewPage = userProductDetailPage.clickToAddReviewLink();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 05: Input '" + reviewTitle + "' into 'Review Title' text box");
+        userProductReviewPage.inputToReviewTextboxByTextboxId("input","AddProductReview_Title", reviewTitle);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 06: Input '" + reviewText + "' into 'Review Title' text box");
+        userProductReviewPage.inputToReviewTextboxByTextboxId("textarea","AddProductReview_ReviewText", reviewText);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 07: Click the 'Submit Review' button");
+        userProductReviewPage.clickToSubmitReviewButton();
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 08: Verify the successful message is displayed");
+        Assert.assertEquals(userProductReviewPage.getSuccessMessageText(), "Product review is successfully added.");
+
+        ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 09: Click to 'My account' link");
+        userProductReviewPage.clickToHeaderLinkByText(driver, "ico-account");
+        userCustomerInfoPage = PageGenerateManager.getUserCustomerInfoPage(driver);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 10: Click to 'My product reviews' link at sidebar menu");
+        userCustomerInfoPage.clickToMenuLinkAtSidebarMenuByMenuText(driver, "My product reviews");
+        userMyProductReviewsPage = PageGenerateManager.getUserMyProductReviewsPage(driver);
+
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password - Step 10: Verify the title in the 'My product reviews' containing '" + reviewTitle + "'");
+        Assert.assertTrue(userMyProductReviewsPage.isProductReviewTitleDisplayed(reviewTitle));
     }
 
     @AfterClass(alwaysRun = true)

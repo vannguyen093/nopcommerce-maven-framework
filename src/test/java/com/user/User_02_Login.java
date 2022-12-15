@@ -41,7 +41,7 @@ public class User_02_Login extends BaseTest {
         emailAddress = userData.getEmail() + generateFakeNumber() + "@gmail.com";
         emailAddressNotRegistered = "vanguyen3245@gmail.com";
 
-        userHomePage.clickToHeaderLinkByText(driver, "Register");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
         userRegisterPage.selectGenderRadioByText(userData.getGender());
         userRegisterPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getFirstName());
@@ -54,7 +54,7 @@ public class User_02_Login extends BaseTest {
         userRegisterPage.inputToRegisterTextboxByTextboxID("ConfirmPassword", userData.getPassword());
         userRegisterPage.clickToRegisterButton();
         userHomePage = userRegisterPage.clickToContinueLink();
-        userHomePage.clickToHeaderLinkByText(driver, "Log out");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-logout");
     }
 
     @Test
@@ -62,7 +62,7 @@ public class User_02_Login extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Login With Empty Data");
 
         ExtentTestManager.getTest().log(Status.INFO, "Empty Data - Step 01: Click to 'Login' link");
-        userHomePage.clickToHeaderLinkByText(driver, "Log in");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-login");
         userLoginPage = PageGenerateManager.getUserLoginPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Empty Data - Step 02: Click to 'Login' button");
@@ -77,7 +77,7 @@ public class User_02_Login extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Login With Invalid Email");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 01: Click to 'Login' link");
-        userLoginPage.clickToHeaderLinkByText(driver, "Log in");
+        userLoginPage.clickToHeaderLinkByText(driver, "ico-login");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 02: Input '123@123@123' into the 'Email' text box");
         userLoginPage.inputToLoginTextboxByTextboxId("Email", "123@123@123");
@@ -94,7 +94,7 @@ public class User_02_Login extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Login With Email Not Registered");
 
         ExtentTestManager.getTest().log(Status.INFO, "Email Not Registered - Step 01: Click to 'Login' link");
-        userLoginPage.clickToHeaderLinkByText(driver, "Log in");
+        userLoginPage.clickToHeaderLinkByText(driver, "ico-login");
 
         ExtentTestManager.getTest().log(Status.INFO, "Email Not Registered - Step 02: Input '" + emailAddressNotRegistered + "' into the 'Email' text box");
         userLoginPage.inputToLoginTextboxByTextboxId("Email", emailAddressNotRegistered);
@@ -114,7 +114,7 @@ public class User_02_Login extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Login With Empty Password");
 
         ExtentTestManager.getTest().log(Status.INFO, "Empty Password - Step 01: Click to 'Login' link");
-        userLoginPage.clickToHeaderLinkByText(driver, "Log in");
+        userLoginPage.clickToHeaderLinkByText(driver, "ico-login");
 
         ExtentTestManager.getTest().log(Status.INFO, "Empty Password - Step 02: Input '" + emailAddress + "' into the 'Email' text box");
         userLoginPage.inputToLoginTextboxByTextboxId("Email", emailAddress);
@@ -131,7 +131,7 @@ public class User_02_Login extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Login With Invalid Password");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Password - Step 01: Click to 'Login' link");
-        userLoginPage.clickToHeaderLinkByText(driver, "Log in");
+        userLoginPage.clickToHeaderLinkByText(driver, "ico-login");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Password - Step 02: Input '" + emailAddress + "' into the 'Email' text box");
         userLoginPage.inputToLoginTextboxByTextboxId("Email", emailAddress);
@@ -151,7 +151,7 @@ public class User_02_Login extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Login Successful");
 
         ExtentTestManager.getTest().log(Status.INFO, "Login Successful - Step 01: Click to 'Login' link");
-        userLoginPage.clickToHeaderLinkByText(driver, "Log in");
+        userLoginPage.clickToHeaderLinkByText(driver, "ico-login");
 
         ExtentTestManager.getTest().log(Status.INFO, "Login Successful- Step 02: Input '" + emailAddress + "' into the 'Email' text box");
         userLoginPage.inputToLoginTextboxByTextboxId("Email", emailAddress);

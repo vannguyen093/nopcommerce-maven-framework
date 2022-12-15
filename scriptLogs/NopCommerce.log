@@ -156,3 +156,165 @@ Session ID: 6077b3e918229671c826daa3f99fa479
 [2022-12-12 16:23:36,384] Driver instance name = chromedriver: chrome on windows (5b2c56fa5f85e69b73bece0ca0a9ce34)
 [2022-12-12 16:30:35,015] OS name = windows 11
 [2022-12-12 16:30:35,016] Driver instance name = chromedriver: chrome on windows (0763f081caea4d2231031b7f238a2884)
+[2022-12-12 19:21:28,406] OS name = windows 11
+[2022-12-12 19:21:28,487] Driver instance name = chromedriver: chrome on windows (3b1069ef6fb32f4d81623f6b1bfc52f7)
+[2022-12-12 19:26:36,580] OS name = windows 11
+[2022-12-12 19:26:36,672] Driver instance name = chromedriver: chrome on windows (a71c633a611b0e0f5f4d09c54a10a4b2)
+[2022-12-12 19:31:48,439] OS name = windows 11
+[2022-12-12 19:31:48,528] Driver instance name = chromedriver: chrome on windows (493436242ae9f5e0e5f729c40f3e3ced)
+[2022-12-12 19:37:01,656] OS name = windows 11
+[2022-12-12 19:37:01,657] Driver instance name = chromedriver: chrome on windows (c74ae18080cef6363a782a02befb6665)
+[2022-12-13 10:05:18,591] OS name = windows 11
+[2022-12-13 10:05:18,592] Driver instance name = chromedriver: chrome on windows (90788ae8898cd8632580553a8139da47)
+[2022-12-13 10:13:16,745] OS name = windows 11
+[2022-12-13 10:13:16,746] Driver instance name = chromedriver: chrome on windows (2b9005060e18ce58f630d91f3e8a5794)
+[2022-12-13 10:28:19,114] OS name = windows 11
+[2022-12-13 10:28:19,115] Driver instance name = chromedriver: chrome on windows (acfe824eee6b23bdc6fe7afb0de91ab7)
+[2022-12-13 10:40:25,516] OS name = windows 11
+[2022-12-13 10:40:25,516] Driver instance name = chromedriver: chrome on windows (9146f3447aff93f7a6a1c42c10280415)
+[2022-12-13 11:06:20,317] OS name = windows 11
+[2022-12-13 11:06:20,400] Driver instance name = chromedriver: chrome on windows (b3284397dff133d33a34f3a097e34852)
+[2022-12-13 11:07:16,770] OS name = windows 11
+[2022-12-13 11:07:16,773] Driver instance name = chromedriver: chrome on windows (1e466a3dfacb305a822d797e41646d04)
+[2022-12-13 14:17:32,771] OS name = windows 11
+[2022-12-13 14:17:32,865] Driver instance name = chromedriver: chrome on windows (bd6e64f1d67d6720037f3688ce280e5c)
+[2022-12-13 14:17:54,863] OS name = windows 11
+[2022-12-13 14:17:54,864] Driver instance name = chromedriver: chrome on windows (8a702600f31606fef8b852141a8088bb)
+[2022-12-13 14:22:34,742] OS name = windows 11
+[2022-12-13 14:22:34,743] Driver instance name = chromedriver: chrome on windows (0abc331fced212bf49259f8f4b8660f4)
+[2022-12-13 14:25:43,277] OS name = windows 11
+[2022-12-13 14:25:43,278] Driver instance name = chromedriver: chrome on windows (e6cb8a827bd168fb61aa72950ae109e3)
+[2022-12-13 14:27:06,685] OS name = windows 11
+[2022-12-13 14:27:06,686] Driver instance name = chromedriver: chrome on windows (b966b0efe010f2110ff5f8d1fca272a1)
+[2022-12-13 14:58:55,151] OS name = windows 11
+[2022-12-13 14:58:55,152] Driver instance name = chromedriver: chrome on windows (d60b6004ceeb2b2d145ea83aad558cc1)
+[2022-12-13 15:00:52,940] OS name = windows 11
+[2022-12-13 15:00:52,941] Driver instance name = chromedriver: chrome on windows (c4824f66cb6f16cde686f845de720141)
+[2022-12-13 15:06:26,065] OS name = windows 11
+[2022-12-13 15:06:26,067] Driver instance name = chromedriver: chrome on windows (10a847a053c9aa60e3177a058b210c1b)
+[2022-12-13 15:08:19,243] OS name = windows 11
+[2022-12-13 15:08:19,244] Driver instance name = chromedriver: chrome on windows (d0ec93b45c9ba6b36560a6f0aaf92d4e)
+[2022-12-13 15:10:37,252] OS name = windows 11
+[2022-12-13 15:10:37,253] Driver instance name = chromedriver: chrome on windows (d35b30717afb2f75ebea6e52bbe24f6d)
+[2022-12-13 15:49:16,594] OS name = windows 11
+[2022-12-13 15:49:16,694] Driver instance name = chromedriver: chrome on windows (8bf022397c7b9e3c58fc447704959174)
+[2022-12-13 15:51:54,728] OS name = windows 11
+[2022-12-13 15:51:54,730] Driver instance name = chromedriver: chrome on windows (64c30982fbbfabf9598325200c030ca2)
+[2022-12-13 15:55:58,674] OS name = windows 11
+[2022-12-13 15:55:58,675] Driver instance name = chromedriver: chrome on windows (b2c6930ff725ef9c68dac8d85b48239e)
+[2022-12-13 15:56:49,147] OS name = windows 11
+[2022-12-13 15:56:49,148] Driver instance name = chromedriver: chrome on windows (b56c6d9bd881f4ba464cfbfb734f9f7e)
+[2022-12-13 15:58:56,360] OS name = windows 11
+[2022-12-13 15:58:56,361] Driver instance name = chromedriver: chrome on windows (06e35df524ca78626395ea093f0c19e2)
+[2022-12-13 16:22:42,506] OS name = windows 11
+[2022-12-13 16:22:42,507] Driver instance name = chromedriver: chrome on windows (b53d97826d6d82ce6787b3d46457d8e5)
+[2022-12-13 16:25:02,168] OS name = windows 11
+[2022-12-13 16:25:02,169] Driver instance name = chromedriver: chrome on windows (f90f3e9e4354ce929dbda09a0a755924)
+[2022-12-13 20:35:40,861] OS name = windows 11
+[2022-12-13 20:35:40,955] Driver instance name = chromedriver: chrome on windows (6c341f15e71ea3b8459191ce7f150894)
+[2022-12-13 20:40:44,987] OS name = windows 11
+[2022-12-13 20:40:45,078] Driver instance name = chromedriver: chrome on windows (715e73aed83ec2ec56ae2d82abd31cfb)
+[2022-12-13 20:46:30,573] OS name = windows 11
+[2022-12-13 20:46:30,574] Driver instance name = chromedriver: chrome on windows (f4000307ed58e9620bcae9ec5fd2e189)
+[2022-12-13 20:50:49,835] OS name = windows 11
+[2022-12-13 20:50:49,837] Driver instance name = chromedriver: chrome on windows (af262f4699fc10d711ac07692a82d230)
+[2022-12-14 09:49:48,381] OS name = windows 11
+[2022-12-14 09:49:48,599] Driver instance name = chromedriver: chrome on windows (365eacdf4db72a53dadc6d9557e9e467)
+[2022-12-14 09:52:59,254] OS name = windows 11
+[2022-12-14 09:52:59,256] Driver instance name = chromedriver: chrome on windows (f2a7c423a267a9cb525c90c524229af1)
+[2022-12-14 09:57:50,167] OS name = windows 11
+[2022-12-14 09:57:50,629] Driver instance name = chromedriver: chrome on windows (ddc6fdb09c370729dca155737156f459)
+[2022-12-14 14:18:09,504] OS name = windows 11
+[2022-12-14 14:18:09,506] Driver instance name = chromedriver: chrome on windows (16986190d7b20d690d2ed6e762647cc3)
+[2022-12-14 14:19:46,967] OS name = windows 11
+[2022-12-14 14:19:46,969] Driver instance name = chromedriver: chrome on windows (d5645a2f9df6d7b96e1bbf491f2570f9)
+[2022-12-14 14:21:27,610] OS name = windows 11
+[2022-12-14 14:21:27,611] Driver instance name = chromedriver: chrome on windows (ac97cfc694b50108e1b1dcfe49e3ec4e)
+[2022-12-14 14:28:17,482] OS name = windows 11
+[2022-12-14 14:28:17,483] Driver instance name = chromedriver: chrome on windows (e0583726bed11eff0e0e5c6b49c38c3a)
+[2022-12-14 14:28:17,491] no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=108.0.5359.124)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-9JOSJVK', ip: '192.168.164.1', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Van Nguyen\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:58898}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e0583726bed11eff0e0e5c6b49c38c3a
+[2022-12-14 14:28:52,969] OS name = windows 11
+[2022-12-14 14:28:52,970] Driver instance name = chromedriver: chrome on windows (84daa46f1cccaef711f29ec7caf05ceb)
+[2022-12-14 14:40:10,776] OS name = windows 11
+[2022-12-14 14:40:10,778] Driver instance name = chromedriver: chrome on windows (708537b841bbab9c771be06aec386936)
+[2022-12-14 14:42:09,163] OS name = windows 11
+[2022-12-14 14:42:09,164] Driver instance name = chromedriver: chrome on windows (c5ed2facba92f5d345e581377a67e9f1)
+[2022-12-14 15:23:45,616] OS name = windows 11
+[2022-12-14 15:23:45,616] Driver instance name = chromedriver: chrome on windows (a72c706530c95c5e7862f0e3b7a523b3)
+[2022-12-14 15:27:59,914] OS name = windows 11
+[2022-12-14 15:27:59,914] Driver instance name = chromedriver: chrome on windows (ecd7881c3891fcb3de95f332e3b1ccc6)
+[2022-12-14 15:29:01,815] OS name = windows 11
+[2022-12-14 15:29:01,816] Driver instance name = chromedriver: chrome on windows (6e2596586cb62c9a44166a66665e5c1b)
+[2022-12-14 15:40:11,957] OS name = windows 11
+[2022-12-14 15:40:11,958] Driver instance name = chromedriver: chrome on windows (02fcc7711bdff1c9dc65ae429245b9a7)
+[2022-12-14 18:02:20,368] OS name = windows 11
+[2022-12-14 18:02:20,460] Driver instance name = chromedriver: chrome on windows (d3a13693507f469edb7875066eee700e)
+[2022-12-14 18:05:17,244] OS name = windows 11
+[2022-12-14 18:05:17,245] Driver instance name = chromedriver: chrome on windows (9faca2c55237c9fc8231f4a42ecd0a3e)
+[2022-12-15 14:47:20,655] OS name = windows 11
+[2022-12-15 14:47:20,744] Driver instance name = chromedriver: chrome on windows (aa2ed7766bbcd7a700b8bffff6e53f5a)
+[2022-12-15 14:49:04,592] OS name = windows 11
+[2022-12-15 14:49:04,595] Driver instance name = chromedriver: chrome on windows (a58f8939df2268326bf8b348f7992731)
+[2022-12-15 14:50:21,289] OS name = windows 11
+[2022-12-15 14:50:21,290] Driver instance name = chromedriver: chrome on windows (01da2dba03a4598124d8eef202ef5f3e)
+[2022-12-15 14:52:29,895] OS name = windows 11
+[2022-12-15 14:52:30,240] Driver instance name = chromedriver: chrome on windows (be3f74fdc9765930bcfee3738f9bfd3b)
+[2022-12-15 14:54:29,685] OS name = windows 11
+[2022-12-15 14:54:29,692] Driver instance name = chromedriver: chrome on windows (05751f6daa9426d6d0577c2bf344f890)
+[2022-12-15 14:55:34,661] OS name = windows 11
+[2022-12-15 14:55:34,662] Driver instance name = chromedriver: chrome on windows (dfb33da79b6a595537c6297904268d19)
+[2022-12-15 14:56:53,260] OS name = windows 11
+[2022-12-15 14:56:53,261] Driver instance name = chromedriver: chrome on windows (f0cdf193e7b8fd8f055f771fc4fcce38)
+[2022-12-15 14:57:58,389] OS name = windows 11
+[2022-12-15 14:57:58,390] Driver instance name = chromedriver: chrome on windows (61b33bdaccc263fdab6d715046771f69)
+[2022-12-15 15:02:19,228] OS name = windows 11
+[2022-12-15 15:02:19,229] Driver instance name = chromedriver: chrome on windows (a09393120fe8fea67bd7b48b0228a84a)
+[2022-12-15 15:04:02,230] OS name = windows 11
+[2022-12-15 15:04:02,231] Driver instance name = chromedriver: chrome on windows (dcb38c52887acd82d7020b581d2682b5)
+[2022-12-15 15:10:38,328] OS name = windows 11
+[2022-12-15 15:10:38,329] Driver instance name = chromedriver: chrome on windows (f0db6235e0e457db367f86d69598a95b)
+[2022-12-15 15:16:49,471] OS name = windows 11
+[2022-12-15 15:16:49,559] Driver instance name = chromedriver: chrome on windows (7f6779fe47d8206fdf62c78c5b261384)
+[2022-12-15 15:20:05,860] OS name = windows 11
+[2022-12-15 15:20:05,866] Driver instance name = chromedriver: chrome on windows (3d010da1bfd69228c506123e217e3ee7)
+[2022-12-15 15:25:39,858] OS name = windows 11
+[2022-12-15 15:25:39,869] Driver instance name = chromedriver: chrome on windows (45aff60b7bb629f8e969b5e92cf351dd)
+[2022-12-15 15:29:41,282] OS name = windows 11
+[2022-12-15 15:29:41,282] Driver instance name = chromedriver: chrome on windows (f0ba4d1dd54d94225813067c548b638f)
+[2022-12-15 15:30:10,565] OS name = windows 11
+[2022-12-15 15:30:10,566] Driver instance name = chromedriver: chrome on windows (824a6246bb8aa77bc1fb61b96e005a14)
+[2022-12-15 15:30:14,635] java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:61233
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-9JOSJVK', ip: '192.168.164.1', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: RemoteWebDriver
+[2022-12-15 15:31:15,182] OS name = windows 11
+[2022-12-15 15:31:15,183] Driver instance name = chromedriver: chrome on windows (eda97a282e07008009bfea4221c05370)
+[2022-12-15 15:35:52,572] OS name = windows 11
+[2022-12-15 15:35:52,573] Driver instance name = chromedriver: chrome on windows (c678c677659dd6fe871afb64710bd8b6)
+[2022-12-15 15:40:07,466] OS name = windows 11
+[2022-12-15 15:40:07,468] Driver instance name = chromedriver: chrome on windows (f88cd96a909008e0c983aa89c0e9d725)
+[2022-12-15 15:42:14,975] OS name = windows 11
+[2022-12-15 15:42:14,976] Driver instance name = chromedriver: chrome on windows (2261b7c4bcf54b9c5ad1d67b358dc94b)
+[2022-12-15 15:44:41,675] OS name = windows 11
+[2022-12-15 15:44:41,676] Driver instance name = chromedriver: chrome on windows (11ba4815544c7bc7b02c9a783f095539)
+[2022-12-15 15:47:24,065] OS name = windows 11
+[2022-12-15 15:47:24,088] Driver instance name = chromedriver: chrome on windows (7ad281b59e82467820569b2a13f9a4a5)
+[2022-12-15 15:51:54,544] OS name = windows 11
+[2022-12-15 15:51:54,559] Driver instance name = chromedriver: chrome on windows (6e82a08ccc42765c970fdf6b0e5c0826)
+[2022-12-15 15:51:54,571] no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=108.0.5359.124)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-9JOSJVK', ip: '192.168.164.1', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.124, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\Van Nguyen\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:52384}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6e82a08ccc42765c970fdf6b0e5c0826
+[2022-12-15 15:56:20,513] OS name = windows 11
+[2022-12-15 15:56:20,516] Driver instance name = chromedriver: chrome on windows (6941f182b95a07a5782085efbff8f8e6)

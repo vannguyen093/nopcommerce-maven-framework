@@ -42,7 +42,7 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.startTest(method.getName(), "Create Account With Empty Data");
 
         ExtentTestManager.getTest().log(Status.INFO, "Empty Data - Step 01: Click to 'Register' link");
-        userHomePage.clickToHeaderLinkByText(driver, "Register");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Empty Data - Step 02: Click to 'Register' button");
@@ -69,7 +69,7 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.startTest(method.getName(), "Create Account With Invalid Email");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 01: Click to 'Register' link");
-        userRegisterPage.clickToHeaderLinkByText(driver, "Register");
+        userRegisterPage.clickToHeaderLinkByText(driver, "ico-register");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
         userRegisterPage.selectGenderRadioByText(userData.getGender());
@@ -110,7 +110,7 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.startTest(method.getName(), "Create Account Successful");
 
         ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 01: Click to 'Register' link");
-        userRegisterPage.clickToHeaderLinkByText(driver, "Register");
+        userRegisterPage.clickToHeaderLinkByText(driver, "ico-register");
 
         ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
         userRegisterPage.selectGenderRadioByText(userData.getGender());
@@ -149,7 +149,7 @@ public class User_01_Register extends BaseTest{
         userHomePage = userRegisterPage.clickToContinueLink();
 
         ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 14: Click the 'Logout' link");
-        userHomePage.clickToHeaderLinkByText(driver, "Log out");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-logout");
     }
 
     @Test
@@ -157,7 +157,7 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.startTest(method.getName(), "Create Account With Existing Email");
 
         ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 01: Click to 'Register' link");
-        userHomePage.clickToHeaderLinkByText(driver, "Register");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
@@ -199,7 +199,7 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.startTest(method.getName(), "Create Account With Password Less Than 6 Characters");
 
         ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 01: Click to 'Register' link");
-        userHomePage.clickToHeaderLinkByText(driver, "Register");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
@@ -241,7 +241,7 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.startTest(method.getName(), "Create Account With Invalid Confirm Password");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 01: Click to 'Register' link");
-        userHomePage.clickToHeaderLinkByText(driver, "Register");
+        userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");

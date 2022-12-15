@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageUIs.BasePageUI;
+import pageUIs.UserProductPageUI;
 
 import java.util.List;
 import java.util.Set;
@@ -547,13 +548,47 @@ public class BasePage {
     private long longTimeOut = GlobalConstants.LONG_TIMEOUT;
     private long shortTimeOut = GlobalConstants.SHORT_TIMEOUT;
 
-    public void clickToHeaderLinkByText(WebDriver driver, String headerLinkText) {
-        waitForElementClickable(driver, BasePageUI.HEADER_LINK_BY_CLASS, headerLinkText);
-        clickToElement(driver, BasePageUI.HEADER_LINK_BY_CLASS, headerLinkText);
+    public void clickToHeaderLinkByText(WebDriver driver, String headerLinkClass) {
+        waitForElementClickable(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkClass);
+        clickToElement(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkClass);
     }
 
     public void clickToMenuLinkAtSidebarMenuByMenuText(WebDriver driver, String sidebarMenuText) {
         waitForElementClickable(driver, BasePageUI.SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
         clickToElement(driver, BasePageUI.SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
+    }
+
+    public void hoverToHeaderMenuByMenuText(WebDriver driver, String headerMenuText){
+        waitForElementClickable(driver, BasePageUI.HEADER_MENU_BY_TEXT, headerMenuText);
+        hoverMouseToElement(driver, BasePageUI.HEADER_MENU_BY_TEXT, headerMenuText);
+    }
+
+    public void clickToSubHeaderMenuByText(WebDriver driver, String headerMenuText, String headerSubMenuText) {
+        hoverToHeaderMenuByMenuText(driver, headerMenuText);
+        waitForElementClickable(driver, BasePageUI.SUB_HEADER_MENU_BY_TEXT, headerMenuText, headerSubMenuText);
+        clickToElement(driver, BasePageUI.SUB_HEADER_MENU_BY_TEXT, headerMenuText, headerSubMenuText);
+    }
+
+    public void clickToFooterMenuLinkByMenuText(WebDriver driver, String footerMenuText) {
+        waitForElementClickable(driver, BasePageUI.FOOTER_MENU_BY_MENU_TEXT, footerMenuText);
+        clickToElement(driver, BasePageUI.FOOTER_MENU_BY_MENU_TEXT, footerMenuText);
+    }
+
+    public String getSuccessMessageText(WebDriver driver) {
+        waitForElementVisible(driver, BasePageUI.CHANGE_PASS_SUCCESSFUL_MESSAGE_TEXT);
+        return getElementText(driver, BasePageUI.CHANGE_PASS_SUCCESSFUL_MESSAGE_TEXT);
+    }
+
+    public void clickToCloseMessageButton(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.CLOSE_MESSAGE_BUTTON);
+        clickToElement(driver, BasePageUI.CLOSE_MESSAGE_BUTTON);
+    }
+
+    public void hoverToAddToCartButton(WebDriver driver, String headerLinkText) {
+        waitForElementClickable(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkText);
+        hoverMouseToElement(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkText);
+    }
+    public void waitLoadingIconInvisible(WebDriver driver) {
+        waitForElementInvisible(driver, BasePageUI.AJAX_PRODUCT_BUSY_ICON);
     }
 }

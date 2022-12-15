@@ -21,4 +21,40 @@ public class PageGenerateManager {
     public static UserChangePassPO getUserChangePassPage(WebDriver driver){
         return new UserChangePassPO(driver);
     }
+    public static UserProductPO getUserProductPage(WebDriver driver){
+        return new UserProductPO(driver);
+    }
+    public static UserProductDetailPO getUserProductDetailPage(WebDriver driver){
+        return new UserProductDetailPO(driver);
+    }
+    public static UserProductReviewPO getUserProductReviewPage(WebDriver driver){
+        return new UserProductReviewPO(driver);
+    }
+    public static UserMyProductReviewsPO getUserMyProductReviewsPage(WebDriver driver){
+        return new UserMyProductReviewsPO(driver);
+    }
+    public static UserSearchPO getUserSearchPage(WebDriver driver){
+        return new UserSearchPO(driver);
+    }
+    public static UserWishlistPO getUserWishlistPage(WebDriver driver){
+        return new UserWishlistPO(driver);
+    }
+    public static UserCartPO getUserCartPage(WebDriver driver){
+        return new UserCartPO(driver);
+    }
+    public static UserComparePO getUserComparePage(WebDriver driver){
+        return new UserComparePO(driver);
+    }
+    public static UserRecentViewPO getUserRecentViewPage(WebDriver driver){
+        return new UserRecentViewPO(driver);
+    }
+    public static UserCheckOutPO getUserCheckOutPage(WebDriver driver){
+        return new UserCheckOutPO(driver);
+    }
+    public static UserOrdersPO getUserOrdersPage(WebDriver driver){
+        return new UserOrdersPO(driver);
+    }
+    public static UserOrdersDetailPO getUserOrdersDetailPage(WebDriver driver){
+        return new UserOrdersDetailPO(driver);
+    }
 }

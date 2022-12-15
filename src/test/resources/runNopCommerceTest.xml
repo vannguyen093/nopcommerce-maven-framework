@@ -18,7 +18,7 @@
 <!--            <package name="com.user" />-->
 <!--        </packages>-->
         <classes>
-            <class name="com.user.User_03_My_Account"/>
+            <class name="com.user.User_08_Checkout"/>
         </classes>
     </test>
 
