@@ -1,28 +1,13 @@
 package data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import commons.GlobalConstants;
-import lombok.Getter;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.List;
 
 public class UserDataMapper {
-
-    public static UserDataMapper getUserData() {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            return mapper.readValue(new File(GlobalConstants.PROJECT_PATH + "/src/test/resources/UserData.json"), UserDataMapper.class);
-        } catch (Exception ex){
-            ex.printStackTrace();
-            return null;
-        }
-    }
 
     @JsonProperty("user")
     Customer customer;
@@ -31,23 +16,15 @@ public class UserDataMapper {
     @JsonProperty("addressesInfo")
     AddressesInfo addressesInfo;
 
-    static class Customer{
-        @JsonProperty("firstName")
-        String firstName;
-        @JsonProperty("lastName")
-        String lastName;
-        @JsonProperty("gender")
-        String gender;
-        @JsonProperty("email")
-        String email;
-        @JsonProperty("password")
-        String password;
-        @JsonProperty("date")
-        String date;
-        @JsonProperty("month")
-        String month;
-        @JsonProperty("year")
-        String year;
+    public static UserDataMapper getUserData() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            return mapper.readValue(new File(GlobalConstants.PROJECT_PATH + "/src/test/resources/UserData.json"), UserDataMapper.class);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     public String getFirstName() {
@@ -82,24 +59,6 @@ public class UserDataMapper {
         return customer.year;
     }
 
-    static class EditCustomer{
-        @JsonProperty("editFirstName")
-        private String editFirstName;
-        @JsonProperty("editLastName")
-        private String editLastName;
-        @JsonProperty("editGender")
-        private String editGender;
-        @JsonProperty("editEmail")
-        private String editEmail;
-        @JsonProperty("editPassword")
-        private String editPassword;
-        @JsonProperty("editDate")
-        private String editDate;
-        @JsonProperty("editMonth")
-        private String editMonth;
-        @JsonProperty("editYear")
-        private String editYear;
-    }
     public String getEditFirstName() {
         return editCustomer.editFirstName;
     }
@@ -130,29 +89,6 @@ public class UserDataMapper {
 
     public String getEditYear() {
         return editCustomer.editYear;
-    }
-
-    static class AddressesInfo{
-        @JsonProperty("addressFirstName")
-        String addressFirstName;
-        @JsonProperty("addressLastName")
-        String addressLastName;
-        @JsonProperty("addressEmail")
-        String addressEmail;
-        @JsonProperty("addressCompany")
-        String addressCompany;
-        @JsonProperty("addressCountry")
-        String addressCountry;
-        @JsonProperty("addressState")
-        String addressState;
-        @JsonProperty("addressCity")
-        String addressCity;
-        @JsonProperty("addressStreet")
-        String addressStreet;
-        @JsonProperty("addressZip")
-        String addressZip;
-        @JsonProperty("addressPhone")
-        String addressPhone;
     }
 
     public String getAddressFirstName() {
@@ -193,6 +129,67 @@ public class UserDataMapper {
 
     public String getAddressPhone() {
         return addressesInfo.addressPhone;
+    }
+
+    static class Customer {
+        @JsonProperty("firstName")
+        String firstName;
+        @JsonProperty("lastName")
+        String lastName;
+        @JsonProperty("gender")
+        String gender;
+        @JsonProperty("email")
+        String email;
+        @JsonProperty("password")
+        String password;
+        @JsonProperty("date")
+        String date;
+        @JsonProperty("month")
+        String month;
+        @JsonProperty("year")
+        String year;
+    }
+
+    static class EditCustomer {
+        @JsonProperty("editFirstName")
+        private String editFirstName;
+        @JsonProperty("editLastName")
+        private String editLastName;
+        @JsonProperty("editGender")
+        private String editGender;
+        @JsonProperty("editEmail")
+        private String editEmail;
+        @JsonProperty("editPassword")
+        private String editPassword;
+        @JsonProperty("editDate")
+        private String editDate;
+        @JsonProperty("editMonth")
+        private String editMonth;
+        @JsonProperty("editYear")
+        private String editYear;
+    }
+
+    static class AddressesInfo {
+        @JsonProperty("addressFirstName")
+        String addressFirstName;
+        @JsonProperty("addressLastName")
+        String addressLastName;
+        @JsonProperty("addressEmail")
+        String addressEmail;
+        @JsonProperty("addressCompany")
+        String addressCompany;
+        @JsonProperty("addressCountry")
+        String addressCountry;
+        @JsonProperty("addressState")
+        String addressState;
+        @JsonProperty("addressCity")
+        String addressCity;
+        @JsonProperty("addressStreet")
+        String addressStreet;
+        @JsonProperty("addressZip")
+        String addressZip;
+        @JsonProperty("addressPhone")
+        String addressPhone;
     }
 
 }

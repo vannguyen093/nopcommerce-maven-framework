@@ -18,13 +18,13 @@ import java.lang.reflect.Method;
 
 public class User_02_Login extends BaseTest {
 
-    private WebDriver driver;
-    private String emailAddress, emailAddressNotRegistered;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
     UserLoginPO userLoginPage;
     UserRegisterPO userRegisterPage;
+    private WebDriver driver;
+    private String emailAddress, emailAddressNotRegistered;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass

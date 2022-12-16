@@ -47,7 +47,7 @@ public class UserCustomerInfoPO extends BasePage {
     public String getEditMonthAttribute(String dropdownName) {
         waitForElementVisible(driver, UserCustomerInfoPageUI.BIRTHDAY_SELECT_BOX_BY_NAME, dropdownName);
         String month = getElementAttribute(driver, UserCustomerInfoPageUI.BIRTHDAY_SELECT_BOX_BY_NAME, "value", dropdownName);
-        return CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL,Month.of(Integer.parseInt(month)).name());
+        return CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, Month.of(Integer.parseInt(month)).name());
     }
 
     public void clickToSaveButton() {

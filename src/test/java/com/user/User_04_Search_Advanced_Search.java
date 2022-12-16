@@ -7,7 +7,10 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pageObjects.*;
+import pageObjects.PageGenerateManager;
+import pageObjects.UserHomePO;
+import pageObjects.UserRegisterPO;
+import pageObjects.UserSearchPO;
 import reportConfig.ExtentTestManager;
 import ultilities.Environment;
 
@@ -15,13 +18,13 @@ import java.lang.reflect.Method;
 
 public class User_04_Search_Advanced_Search extends BaseTest {
 
-    private WebDriver driver;
-    private String emailAddress, notExistData, relativeData, absoluteData, advancedSearchData;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
     UserRegisterPO userRegisterPage;
     UserSearchPO userSearchPage;
+    private WebDriver driver;
+    private String emailAddress, notExistData, relativeData, absoluteData, advancedSearchData;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass

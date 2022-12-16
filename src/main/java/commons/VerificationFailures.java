@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class VerificationFailures extends HashMap<ITestResult, List<Throwable>>{
+public class VerificationFailures extends HashMap<ITestResult, List<Throwable>> {
+    private static final long serialVersionUID = 1L;
+    private static VerificationFailures failures;
+
     private VerificationFailures() {
         super();
     }
@@ -28,7 +31,4 @@ public class VerificationFailures extends HashMap<ITestResult, List<Throwable>>{
         exceptions.add(throwable);
         put(result, exceptions);
     }
-
-    private static final long serialVersionUID = 1L;
-    private static VerificationFailures failures;
 }

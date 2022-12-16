@@ -18,16 +18,16 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-    private WebDriver driver;
     protected final Log log;
+    private WebDriver driver;
+
+    protected BaseTest() {
+        log = LogFactory.getLog(getClass());
+    }
 
     @BeforeSuite
     public void initBeforeSuite() {
         deleteAllureReport();
-    }
-
-    protected BaseTest() {
-        log = LogFactory.getLog(getClass());
     }
 
     protected WebDriver getBrowserDriver(String browserName, String enviromentName, String envName, String ipAddress, String portNumber, String osName, String osVersion) {
@@ -106,7 +106,7 @@ public class BaseTest {
 
     protected int generateFakeNumber() {
         Random random = new Random();
-        return random.nextInt(999999)+100000;
+        return random.nextInt(999999) + 100000;
     }
 
     public void deleteAllureReport() {

@@ -15,9 +15,6 @@ import java.lang.reflect.Method;
 
 public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
 
-    private WebDriver driver;
-    private String emailAddress, wishlistProductTitle, compareProductTitle1, compareProductTitle2, compareProductPrice1, compareProductPrice2;
-    private String recentProductTitle1, recentProductTitle2, recentProductTitle3, recentProductTitle4, recentProductTitle5;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
@@ -28,6 +25,9 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
     UserCartPO userCartPage;
     UserComparePO userComparePage;
     UserRecentViewPO userRecentViewPage;
+    private WebDriver driver;
+    private String emailAddress, wishlistProductTitle, compareProductTitle1, compareProductTitle2, compareProductPrice1, compareProductPrice2;
+    private String recentProductTitle1, recentProductTitle2, recentProductTitle3, recentProductTitle4, recentProductTitle5;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass
@@ -76,12 +76,12 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userHomePage.clickToSubHeaderMenuByText(driver, "Computers", "Notebooks");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 02: Click the '"+ wishlistProductTitle + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 02: Click the '" + wishlistProductTitle + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(wishlistProductTitle);
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 03: Click the 'Add to wishlist' button");
         userProductDetailPage.clickToProductDetailButtonByText("Add to wishlist");
-        userProductDetailPage.waitLoadingIconInvisible();
+//        userProductDetailPage.waitLoadingIconInvisible();
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 04: Verify the add to wishlist success message is displayed");
         Assert.assertEquals(userProductDetailPage.getSuccessMessageText(driver), "The product has been added to your wishlist");
@@ -93,7 +93,7 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userProductDetailPage.clickToHeaderLinkByText(driver, "ico-wishlist");
         userWishlistPage = PageGenerateManager.getUserWishlistPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 07: Verify the '"+ wishlistProductTitle + "' title is displayed at Wishlist page");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 07: Verify the '" + wishlistProductTitle + "' title is displayed at Wishlist page");
         Assert.assertTrue(userWishlistPage.isWishlistProductDisplayed(wishlistProductTitle));
     }
 
@@ -107,14 +107,14 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Add To Cart From Wishlist - Step 02: Click the 'Add to cart' button");
         userCartPage = userWishlistPage.clickToAddToCartButton();
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart From Wishlist - Step 03: Verify the '"+ wishlistProductTitle + "' title is displayed at Cart page");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart From Wishlist - Step 03: Verify the '" + wishlistProductTitle + "' title is displayed at Cart page");
         Assert.assertTrue(userCartPage.isCartProductDisplayed(wishlistProductTitle));
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Cart From Wishlist - Step 04: Click to 'Wishlist' link at header link");
         userCartPage.clickToHeaderLinkByText(driver, "ico-wishlist");
         userWishlistPage = PageGenerateManager.getUserWishlistPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart From Wishlist - Step 05: Verify the '"+ wishlistProductTitle + "' title is undisplayed at Wishlist page");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart From Wishlist - Step 05: Verify the '" + wishlistProductTitle + "' title is undisplayed at Wishlist page");
         Assert.assertTrue(userWishlistPage.isWishlistProductUnDisplayed(wishlistProductTitle));
     }
 
@@ -126,12 +126,12 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userWishlistPage.clickToSubHeaderMenuByText(driver, "Computers", "Notebooks");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 02: Click the '"+ wishlistProductTitle + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 02: Click the '" + wishlistProductTitle + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(wishlistProductTitle);
 
         ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 03: Click the 'Add to wishlist' button");
         userProductDetailPage.clickToProductDetailButtonByText("Add to wishlist");
-        userProductDetailPage.waitLoadingIconInvisible();
+//        userProductDetailPage.waitLoadingIconInvisible();
 
         ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 04: Verify the add to wishlist success message is displayed");
         Assert.assertEquals(userProductDetailPage.getSuccessMessageText(driver), "The product has been added to your wishlist");
@@ -143,13 +143,13 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userProductDetailPage.clickToHeaderLinkByText(driver, "ico-wishlist");
         userWishlistPage = PageGenerateManager.getUserWishlistPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 07: Verify the '"+ wishlistProductTitle + "' title is displayed at Wishlist page");
+        ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 07: Verify the '" + wishlistProductTitle + "' title is displayed at Wishlist page");
         Assert.assertTrue(userWishlistPage.isWishlistProductDisplayed(wishlistProductTitle));
 
         ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 07: Click the 'Remove' icon");
         userWishlistPage.clickRemoveIcon();
 
-        ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist  - Step 08: Verify the '"+ wishlistProductTitle + "' title is undisplayed at Wishlist page");
+        ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist  - Step 08: Verify the '" + wishlistProductTitle + "' title is undisplayed at Wishlist page");
         Assert.assertTrue(userWishlistPage.isWishlistProductUnDisplayed(wishlistProductTitle));
 
         ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 09: Verify the wishlist page is empty");
@@ -168,7 +168,7 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userProductPage.clickToButtonByProductTitle(compareProductTitle1, "add-to-compare-list-button");
 
         ExtentTestManager.getTest().log(Status.INFO, "Compare - Step 03: Verify the add to compare success message is displayed");
-        userProductPage.waitLoadingIconInvisible(driver);
+//        userProductPage.waitLoadingIconInvisible(driver);
         Assert.assertEquals(userProductPage.getSuccessMessageText(driver), "The product has been added to your product comparison");
         userProductPage.clickToCloseMessageButton(driver);
 
@@ -176,7 +176,7 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userProductPage.clickToButtonByProductTitle(compareProductTitle2, "add-to-compare-list-button");
 
         ExtentTestManager.getTest().log(Status.INFO, "Compare - Step 05: Verify the add to compare success message is displayed");
-        userProductPage.waitLoadingIconInvisible(driver);
+//        userProductPage.waitLoadingIconInvisible(driver);
         Assert.assertEquals(userProductPage.getSuccessMessageText(driver), "The product has been added to your product comparison");
         userProductPage.clickToCloseMessageButton(driver);
 
@@ -214,35 +214,35 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userComparePage.clickToSubHeaderMenuByText(driver, "Computers", "Notebooks");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 02: Click the '"+ recentProductTitle1 + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 02: Click the '" + recentProductTitle1 + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(recentProductTitle1);
 
         ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 03: Click to 'Notebooks' link at Header Menu");
         userProductDetailPage.clickToSubHeaderMenuByText(driver, "Computers", "Notebooks");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 04: Click the '"+ recentProductTitle2 + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 04: Click the '" + recentProductTitle2 + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(recentProductTitle2);
 
         ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 05: Click to 'Notebooks' link at Header Menu");
         userProductDetailPage.clickToSubHeaderMenuByText(driver, "Computers", "Notebooks");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 06: Click the '"+ recentProductTitle3 + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 06: Click the '" + recentProductTitle3 + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(recentProductTitle3);
 
         ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 07: Click to 'Notebooks' link at Header Menu");
         userProductDetailPage.clickToSubHeaderMenuByText(driver, "Computers", "Notebooks");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 08: Click the '"+ recentProductTitle4 + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 08: Click the '" + recentProductTitle4 + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(recentProductTitle4);
 
         ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 09: Click to 'Notebooks' link at Header Menu");
         userProductDetailPage.clickToSubHeaderMenuByText(driver, "Computers", "Notebooks");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 10: Click the '"+ recentProductTitle5 + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 10: Click the '" + recentProductTitle5 + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(recentProductTitle5);
 
         ExtentTestManager.getTest().log(Status.INFO, "Recent View - Step 11: Click the 'Recently viewed products' link at footer menu");

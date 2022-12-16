@@ -2,7 +2,6 @@ package pageObjects;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageUIs.BasePageUI;
 import pageUIs.UserChangePassPageUI;
 
 public class UserChangePassPO extends BasePage {

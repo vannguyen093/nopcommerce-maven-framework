@@ -49,7 +49,7 @@ public class UserCartPO extends BasePage {
 
     public void clickToCartButtonByID(String buttonID) {
         waitForElementClickable(driver, UserCartPageUI.CART_BUTTON_BY_ID, buttonID);
-        clickToElement(driver, UserCartPageUI.CART_BUTTON_BY_ID,buttonID);
+        clickToElement(driver, UserCartPageUI.CART_BUTTON_BY_ID, buttonID);
     }
 
     public void clickToEstimateShippingButton() {
@@ -64,7 +64,7 @@ public class UserCartPO extends BasePage {
 
     public void inputToEstimateZipTextbox(String value) {
         waitForElementVisible(driver, UserCartPageUI.ESTIMATE_SHIPPING_ZIP_TEXTBOX);
-        sendkeysToElement(driver, UserCartPageUI.ESTIMATE_SHIPPING_ZIP_TEXTBOX,value);
+        sendkeysToElement(driver, UserCartPageUI.ESTIMATE_SHIPPING_ZIP_TEXTBOX, value);
     }
 
     public void clickToEstimateApplyButton() {

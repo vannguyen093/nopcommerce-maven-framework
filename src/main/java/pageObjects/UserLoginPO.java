@@ -2,7 +2,6 @@ package pageObjects;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageUIs.UserHomePageUI;
 import pageUIs.UserLoginPageUI;
 
 public class UserLoginPO extends BasePage {

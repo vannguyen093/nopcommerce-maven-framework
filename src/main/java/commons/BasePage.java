@@ -8,13 +8,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageUIs.BasePageUI;
-import pageUIs.UserProductPageUI;
 
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
+
+    private long longTimeOut = GlobalConstants.LONG_TIMEOUT;
+    private long shortTimeOut = GlobalConstants.SHORT_TIMEOUT;
 
     public static BasePage getBasePageObject() {
         return new BasePage();
@@ -545,20 +547,27 @@ public class BasePage {
         getWebElement(driver, GlobalConstants.UPLOAD_FILE).sendKeys(fullFileName);
     }
 
-    private long longTimeOut = GlobalConstants.LONG_TIMEOUT;
-    private long shortTimeOut = GlobalConstants.SHORT_TIMEOUT;
-
+    /**
+     * Click to Header Link by enter Header Link class
+     * @param driver
+     * @param headerLinkClass
+     */
     public void clickToHeaderLinkByText(WebDriver driver, String headerLinkClass) {
         waitForElementClickable(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkClass);
         clickToElement(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkClass);
     }
 
+    /**
+     * Click to menu link at sidebar menu in My account page by enter sidebar menu text
+     * @param driver
+     * @param sidebarMenuText
+     */
     public void clickToMenuLinkAtSidebarMenuByMenuText(WebDriver driver, String sidebarMenuText) {
-        waitForElementClickable(driver, BasePageUI.SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
-        clickToElement(driver, BasePageUI.SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
+        waitForElementClickable(driver, BasePageUI.USER_SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
+        clickToElement(driver, BasePageUI.USER_SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
     }
 
-    public void hoverToHeaderMenuByMenuText(WebDriver driver, String headerMenuText){
+    public void hoverToHeaderMenuByMenuText(WebDriver driver, String headerMenuText) {
         waitForElementClickable(driver, BasePageUI.HEADER_MENU_BY_TEXT, headerMenuText);
         hoverMouseToElement(driver, BasePageUI.HEADER_MENU_BY_TEXT, headerMenuText);
     }
@@ -575,6 +584,7 @@ public class BasePage {
     }
 
     public String getSuccessMessageText(WebDriver driver) {
+        areJQueryAndJSLoadedSuccessByJS(driver);
         waitForElementVisible(driver, BasePageUI.CHANGE_PASS_SUCCESSFUL_MESSAGE_TEXT);
         return getElementText(driver, BasePageUI.CHANGE_PASS_SUCCESSFUL_MESSAGE_TEXT);
     }
@@ -588,7 +598,19 @@ public class BasePage {
         waitForElementClickable(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkText);
         hoverMouseToElement(driver, BasePageUI.HEADER_LINK_BY_TEXT, headerLinkText);
     }
+
     public void waitLoadingIconInvisible(WebDriver driver) {
         waitForElementInvisible(driver, BasePageUI.AJAX_PRODUCT_BUSY_ICON);
+    }
+
+    public void clickToAdminSidebarMenuByMenuText(WebDriver driver, String sidebarMenuText) {
+        waitForElementClickable(driver, BasePageUI.ADMIN_SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
+        clickToElement(driver, BasePageUI.ADMIN_SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
+    }
+
+    public void clickToAdminSubSidebarMenuByMenuText(WebDriver driver, String sidebarMenuText, String subSidebarMenuText) {
+        clickToAdminSidebarMenuByMenuText(driver, sidebarMenuText);
+        waitForElementClickable(driver, BasePageUI.ADMIN_SUB_SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText, subSidebarMenuText);
+        clickToElement(driver, BasePageUI.ADMIN_SUB_SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText, subSidebarMenuText);
     }
 }

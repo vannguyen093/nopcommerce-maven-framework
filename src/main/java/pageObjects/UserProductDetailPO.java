@@ -37,7 +37,7 @@ public class UserProductDetailPO extends BasePage {
     }
 
     public void selectItemAtRadioCheckboxbyText(String value) {
-        waitForElementClickable(driver, UserProductDetailPageUI.PRODUCT_RADIO_CHECKBOX_BY_TEXT,value);
+        waitForElementClickable(driver, UserProductDetailPageUI.PRODUCT_RADIO_CHECKBOX_BY_TEXT, value);
         checkToDefaultCheckboxRadio(driver, UserProductDetailPageUI.PRODUCT_RADIO_CHECKBOX_BY_TEXT, value);
     }
 

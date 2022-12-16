@@ -13,7 +13,7 @@ public class UserOrdersPO extends BasePage {
 
     public String getOrderNumberTextAtOrdersPage() {
         waitForElementVisible(driver, UserOrdersPageUI.ORDER_NUMBER_TEXT);
-        String orderNumber =  getElementText(driver, UserOrdersPageUI.ORDER_NUMBER_TEXT).substring(15, 18);
+        String orderNumber = getElementText(driver, UserOrdersPageUI.ORDER_NUMBER_TEXT).substring(15, 18);
         return orderNumber;
     }
 

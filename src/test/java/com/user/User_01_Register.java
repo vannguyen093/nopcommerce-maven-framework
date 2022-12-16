@@ -2,24 +2,26 @@ package com.user;
 
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
+import data.UserDataMapper;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import pageObjects.*;
+import pageObjects.PageGenerateManager;
+import pageObjects.UserHomePO;
+import pageObjects.UserRegisterPO;
 import reportConfig.ExtentTestManager;
 import ultilities.Environment;
-import data.UserDataMapper;
 
 import java.lang.reflect.Method;
 
-public class User_01_Register extends BaseTest{
+public class User_01_Register extends BaseTest {
 
-    private WebDriver driver;
-    private String emailAddress, existingEmailAddress;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
     UserRegisterPO userRegisterPage;
+    private WebDriver driver;
+    private String emailAddress, existingEmailAddress;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass
@@ -71,31 +73,31 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 01: Click to 'Register' link");
         userRegisterPage.clickToHeaderLinkByText(driver, "ico-register");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 02: Select '" + userData.getGender() + "' at the 'Gender' radio");
         userRegisterPage.selectGenderRadioByText(userData.getGender());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 03: Input '"+ userData.getFirstName() + "' into the 'First Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 03: Input '" + userData.getFirstName() + "' into the 'First Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 04: Input '"+ userData.getLastName() + "' into the 'Last Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 04: Input '" + userData.getLastName() + "' into the 'Last Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("LastName", userData.getLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 05: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 05: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthDay", userData.getDate());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 06: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 06: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthMonth", userData.getMonth());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 07: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 07: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthYear", userData.getYear());
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 08: Input '123@123@123' into the 'Email' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Email", "123@123@123");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 09: Input '"+ userData.getPassword() + "' into the 'Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 09: Input '" + userData.getPassword() + "' into the 'Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Password", userData.getPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 10: Input '"+ userData.getPassword() + "' into the 'Confirm Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 10: Input '" + userData.getPassword() + "' into the 'Confirm Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("ConfirmPassword", userData.getPassword());
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Email - Step 11: Click to 'Register' button");
@@ -112,31 +114,31 @@ public class User_01_Register extends BaseTest{
         ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 01: Click to 'Register' link");
         userRegisterPage.clickToHeaderLinkByText(driver, "ico-register");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 02: Select '" + userData.getGender() + "' at the 'Gender' radio");
         userRegisterPage.selectGenderRadioByText(userData.getGender());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 03: Input '"+ userData.getFirstName() + "' into the 'First Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 03: Input '" + userData.getFirstName() + "' into the 'First Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 04: Input '"+ userData.getLastName() + "' into the 'Last Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 04: Input '" + userData.getLastName() + "' into the 'Last Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("LastName", userData.getLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful- Step 05: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful- Step 05: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthDay", userData.getDate());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 06: Select '"+ userData.getDate() + "' in the 'Month' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 06: Select '" + userData.getDate() + "' in the 'Month' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthMonth", userData.getMonth());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 07: Select '"+ userData.getDate() + "' in the 'Year' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 07: Select '" + userData.getDate() + "' in the 'Year' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthYear", userData.getYear());
 
         ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 08: Input '" + existingEmailAddress + "' into the 'Email' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Email", existingEmailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 09: Input '"+ userData.getPassword() + "' into the 'Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 09: Input '" + userData.getPassword() + "' into the 'Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Password", userData.getPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 10: Input '"+ userData.getPassword() + "' into the 'Confirm Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 10: Input '" + userData.getPassword() + "' into the 'Confirm Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("ConfirmPassword", userData.getPassword());
 
         ExtentTestManager.getTest().log(Status.INFO, "Successful - Step 11: Click to 'Register' button");
@@ -160,31 +162,31 @@ public class User_01_Register extends BaseTest{
         userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 02: Select '" + userData.getGender() + "' at the 'Gender' radio");
         userRegisterPage.selectGenderRadioByText(userData.getGender());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 03: Input '"+ userData.getFirstName() + "' into the 'First Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 03: Input '" + userData.getFirstName() + "' into the 'First Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 04: Input '"+ userData.getLastName() + "' into the 'Last Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 04: Input '" + userData.getLastName() + "' into the 'Last Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("LastName", userData.getLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email- Step 05: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email- Step 05: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthDay", userData.getDate());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 06: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 06: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthMonth", userData.getMonth());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 07: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 07: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthYear", userData.getYear());
 
         ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 08: Input the existing email '" + existingEmailAddress + "' into the 'Email' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Email", existingEmailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 09: Input '"+ userData.getPassword() + "' into the 'Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 09: Input '" + userData.getPassword() + "' into the 'Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Password", userData.getPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 10: Input '"+ userData.getPassword() + "' into the 'Confirm Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 10: Input '" + userData.getPassword() + "' into the 'Confirm Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("ConfirmPassword", userData.getPassword());
 
         ExtentTestManager.getTest().log(Status.INFO, "Existing Email - Step 11: Click to 'Register' button");
@@ -202,31 +204,31 @@ public class User_01_Register extends BaseTest{
         userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 02: Select '" + userData.getGender() + "' at the 'Gender' radio");
         userRegisterPage.selectGenderRadioByText(userData.getGender());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 03: Input '"+ userData.getFirstName() + "' into the 'First Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 03: Input '" + userData.getFirstName() + "' into the 'First Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 04: Input '"+ userData.getLastName() + "' into the 'Last Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 04: Input '" + userData.getLastName() + "' into the 'Last Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("LastName", userData.getLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6- Step 05: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6- Step 05: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthDay", userData.getDate());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 06: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 06: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthMonth", userData.getMonth());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 07: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 07: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthYear", userData.getYear());
 
         ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 08: Input '" + emailAddress + "' into the 'Email' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Email", emailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 09: Input '"+ "123" + "' into the 'Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 09: Input '" + "123" + "' into the 'Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Password", "123");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 10: Input '"+ userData.getPassword() + "' into the 'Confirm Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 10: Input '" + userData.getPassword() + "' into the 'Confirm Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("ConfirmPassword", userData.getPassword());
 
         ExtentTestManager.getTest().log(Status.INFO, "Password Less Than 6 - Step 11: Click to 'Register' button");
@@ -244,31 +246,31 @@ public class User_01_Register extends BaseTest{
         userHomePage.clickToHeaderLinkByText(driver, "ico-register");
         userRegisterPage = PageGenerateManager.getUserRegisterPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 02: Select '"+ userData.getGender() + "' at the 'Gender' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 02: Select '" + userData.getGender() + "' at the 'Gender' radio");
         userRegisterPage.selectGenderRadioByText(userData.getGender());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 03: Input '"+ userData.getFirstName() + "' into the 'First Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 03: Input '" + userData.getFirstName() + "' into the 'First Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 04: Input '"+ userData.getLastName() + "' into the 'Last Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 04: Input '" + userData.getLastName() + "' into the 'Last Name' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("LastName", userData.getLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password- Step 05: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password- Step 05: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthDay", userData.getDate());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 06: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 06: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthMonth", userData.getMonth());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 07: Select '"+ userData.getDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 07: Select '" + userData.getDate() + "' in the 'Date' dropbox");
         userRegisterPage.selectItemInDOBDropbox("DateOfBirthYear", userData.getYear());
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 08: Input '" + emailAddress + "' into the 'Email' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Email", emailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 09: Input '"+ userData.getPassword() + "' into the 'Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 09: Input '" + userData.getPassword() + "' into the 'Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("Password", userData.getPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 10: Input '"+ "123" + "' into the 'Confirm Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 10: Input '" + "123" + "' into the 'Confirm Password' text box");
         userRegisterPage.inputToRegisterTextboxByTextboxID("ConfirmPassword", "123");
 
         ExtentTestManager.getTest().log(Status.INFO, "Invalid Confirm Password - Step 11: Click to 'Register' button");

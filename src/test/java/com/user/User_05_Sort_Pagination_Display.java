@@ -7,7 +7,9 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pageObjects.*;
+import pageObjects.PageGenerateManager;
+import pageObjects.UserHomePO;
+import pageObjects.UserProductPO;
 import reportConfig.ExtentTestManager;
 import ultilities.Environment;
 
@@ -15,11 +17,11 @@ import java.lang.reflect.Method;
 
 public class User_05_Sort_Pagination_Display extends BaseTest {
 
-    private WebDriver driver;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
     UserProductPO userProductPage;
+    private WebDriver driver;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass

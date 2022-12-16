@@ -11,6 +11,8 @@ import org.testng.internal.Utils;
 import java.util.List;
 
 public class MethodListener implements IInvokedMethodListener {
+    private static final Log log = LogFactory.getLog(MethodListener.class);
+
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult result) {
         log.debug("Before invocation of " + method.getTestMethod().getMethodName());
@@ -51,6 +53,4 @@ public class MethodListener implements IInvokedMethodListener {
             }
         }
     }
-
-    private static final Log log = LogFactory.getLog(MethodListener.class);
 }

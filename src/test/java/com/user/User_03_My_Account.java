@@ -15,8 +15,6 @@ import java.lang.reflect.Method;
 
 public class User_03_My_Account extends BaseTest {
 
-    private WebDriver driver;
-    private String emailAddress, addressessEmailAddress, reviewTitle, reviewText;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
@@ -29,6 +27,8 @@ public class User_03_My_Account extends BaseTest {
     UserProductDetailPO userProductDetailPage;
     UserProductReviewPO userProductReviewPage;
     UserMyProductReviewsPO userMyProductReviewsPage;
+    private WebDriver driver;
+    private String emailAddress, addressessEmailAddress, reviewTitle, reviewText;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass
@@ -70,22 +70,22 @@ public class User_03_My_Account extends BaseTest {
         userHomePage.clickToHeaderLinkByText(driver, "ico-account");
         userCustomerInfoPage = PageGenerateManager.getUserCustomerInfoPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 02: Select '"+ userData.getEditGender() + "' at the 'Gender' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 02: Select '" + userData.getEditGender() + "' at the 'Gender' radio");
         userCustomerInfoPage.selectGenderRadioByText(userData.getEditGender());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 03: Input '"+ userData.getEditFirstName() + "' into the 'First Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 03: Input '" + userData.getEditFirstName() + "' into the 'First Name' text box");
         userCustomerInfoPage.inputToRegisterTextboxByTextboxID("FirstName", userData.getEditFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 04: Input '"+ userData.getEditLastName() + "' into the 'Last Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 04: Input '" + userData.getEditLastName() + "' into the 'Last Name' text box");
         userCustomerInfoPage.inputToRegisterTextboxByTextboxID("LastName", userData.getEditLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Update Info- Step 05: Select '"+ userData.getEditDate() + "' in the 'Date' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Update Info- Step 05: Select '" + userData.getEditDate() + "' in the 'Date' dropbox");
         userCustomerInfoPage.selectItemInDOBDropbox("DateOfBirthDay", userData.getEditDate());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 06: Select '"+ userData.getEditMonth() + "' in the 'Month' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 06: Select '" + userData.getEditMonth() + "' in the 'Month' dropbox");
         userCustomerInfoPage.selectItemInDOBDropbox("DateOfBirthMonth", userData.getEditMonth());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 07: Select '"+ userData.getEditYear() + "' in the 'Year' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 07: Select '" + userData.getEditYear() + "' in the 'Year' dropbox");
         userCustomerInfoPage.selectItemInDOBDropbox("DateOfBirthYear", userData.getEditYear());
 
         ExtentTestManager.getTest().log(Status.INFO, "Update Info - Step 08: Input '" + emailAddress + "' into the 'Email' text box");
@@ -127,34 +127,34 @@ public class User_03_My_Account extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 02: Click to 'Add New' button");
         userAddressesPage.clickToButtonByButtonText("Add new");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 03: Input '"+ userData.getAddressFirstName() + "' into 'First Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 03: Input '" + userData.getAddressFirstName() + "' into 'First Name' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("FirstName", userData.getAddressFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 04: Input '"+ userData.getAddressLastName() + "' into 'Last Name' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 04: Input '" + userData.getAddressLastName() + "' into 'Last Name' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("LastName", userData.getAddressLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 05: Input '"+ addressessEmailAddress + "' into 'Email' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 05: Input '" + addressessEmailAddress + "' into 'Email' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("Email", addressessEmailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 06: Input '"+ userData.getAddressCompany() + "' into 'Company' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 06: Input '" + userData.getAddressCompany() + "' into 'Company' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("Company", userData.getAddressCompany());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 07: Select '"+ userData.getAddressCountry() + "' in 'Country' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 07: Select '" + userData.getAddressCountry() + "' in 'Country' dropbox");
         userAddressesPage.selectItemInDropboxByDropboxId("CountryId", userData.getAddressCountry());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 08: Select '"+ userData.getAddressState() + "' in 'State' dropbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 08: Select '" + userData.getAddressState() + "' in 'State' dropbox");
         userAddressesPage.selectItemInDropboxByDropboxId("StateProvinceId", userData.getAddressState());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 09: Input '"+ userData.getAddressCity() + "' into 'City' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 09: Input '" + userData.getAddressCity() + "' into 'City' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("City", userData.getAddressCity());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 10: Input '"+ userData.getAddressStreet() + "' into 'Address 1' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 10: Input '" + userData.getAddressStreet() + "' into 'Address 1' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("Address1", userData.getAddressStreet());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 11: Input '"+ userData.getAddressZip() + "' into 'Zip/ Postal Code' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 11: Input '" + userData.getAddressZip() + "' into 'Zip/ Postal Code' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("ZipPostalCode", userData.getAddressZip());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 12: Input '"+ userData.getAddressPhone() + "' into 'Phone number' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 12: Input '" + userData.getAddressPhone() + "' into 'Phone number' text box");
         userAddressesPage.inputToAddressesTextboxByTextboxId("PhoneNumber", userData.getAddressPhone());
 
         ExtentTestManager.getTest().log(Status.INFO, "Add Address - Step 13: Click the 'Save' button");
@@ -212,13 +212,13 @@ public class User_03_My_Account extends BaseTest {
         userCustomerInfoPage.clickToMenuLinkAtSidebarMenuByMenuText(driver, "Change password");
         userChangePassPage = PageGenerateManager.getUserChangePassPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 07: Input '"+ userData.getPassword() + "' into 'Old Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 07: Input '" + userData.getPassword() + "' into 'Old Password' text box");
         userChangePassPage.inputToChangePassTextboxByTextboxId("OldPassword", userData.getPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 08: Input '"+ userData.getEditPassword() + "' into 'New Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 08: Input '" + userData.getEditPassword() + "' into 'New Password' text box");
         userChangePassPage.inputToChangePassTextboxByTextboxId("NewPassword", userData.getEditPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 09: Input '"+ userData.getEditPassword() + "' into 'Confirm Password' text box");
+        ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 09: Input '" + userData.getEditPassword() + "' into 'Confirm Password' text box");
         userChangePassPage.inputToChangePassTextboxByTextboxId("ConfirmNewPassword", userData.getEditPassword());
 
         ExtentTestManager.getTest().log(Status.INFO, "Change Password  - Step 10: Click the 'Change password' button");
@@ -272,7 +272,7 @@ public class User_03_My_Account extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Add a prodcut review and verify it displayed at My Account Review");
 
         ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 01: Click to 'Desktops' sub-menu at header menu");
-        userHomePage.clickToSubHeaderMenuByText(driver, "Computers","Desktops");
+        userHomePage.clickToSubHeaderMenuByText(driver, "Computers", "Desktops");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
         ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 02: Click to Product title named 'Build your own computer'");
@@ -285,10 +285,10 @@ public class User_03_My_Account extends BaseTest {
         userProductReviewPage = userProductDetailPage.clickToAddReviewLink();
 
         ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 05: Input '" + reviewTitle + "' into 'Review Title' text box");
-        userProductReviewPage.inputToReviewTextboxByTextboxId("input","AddProductReview_Title", reviewTitle);
+        userProductReviewPage.inputToReviewTextboxByTextboxId("input", "AddProductReview_Title", reviewTitle);
 
         ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 06: Input '" + reviewText + "' into 'Review Title' text box");
-        userProductReviewPage.inputToReviewTextboxByTextboxId("textarea","AddProductReview_ReviewText", reviewText);
+        userProductReviewPage.inputToReviewTextboxByTextboxId("textarea", "AddProductReview_ReviewText", reviewText);
 
         ExtentTestManager.getTest().log(Status.INFO, "Product Review - Step 07: Click the 'Submit Review' button");
         userProductReviewPage.clickToSubmitReviewButton();

@@ -15,9 +15,6 @@ import java.lang.reflect.Method;
 
 public class User_07_Order extends BaseTest {
 
-    private WebDriver driver;
-    private String emailAddress, notebooksName, productCart, desktopRam, desktopHDD, desktopOs, desktopSoftware1, desktopSoftware2, desktopSoftware3, productPrice;
-    private String editDesktopProcessor, editDesktopRam, editDesktopHDD, editDesktopOs;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
@@ -25,6 +22,9 @@ public class User_07_Order extends BaseTest {
     UserProductPO userProductPage;
     UserProductDetailPO userProductDetailPage;
     UserCartPO userCartPage;
+    private WebDriver driver;
+    private String emailAddress, notebooksName, productCart, desktopRam, desktopHDD, desktopOs, desktopSoftware1, desktopSoftware2, desktopSoftware3, productPrice;
+    private String editDesktopProcessor, editDesktopRam, editDesktopHDD, editDesktopOs;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass
@@ -75,25 +75,25 @@ public class User_07_Order extends BaseTest {
         userHomePage.clickToSubHeaderMenuByText(driver, "Computers", "Desktops");
         userProductPage = PageGenerateManager.getUserProductPage(driver);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 02: Click the '"+ productCart + "' title");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 02: Click the '" + productCart + "' title");
         userProductDetailPage = userProductPage.clickToProductTitleByText(productCart);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 03: Select '"+ desktopRam + "' option at 'Ram' dropdown");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 03: Select '" + desktopRam + "' option at 'Ram' dropdown");
         userProductDetailPage.selectItemAtDropdownbyText("product_attribute_2", desktopRam);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 04: Select '"+ desktopHDD + "' option at 'HDD' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 04: Select '" + desktopHDD + "' option at 'HDD' radio");
         userProductDetailPage.selectItemAtRadioCheckboxbyText(desktopHDD);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 05: Select '"+ desktopOs + "' option at 'OS' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 05: Select '" + desktopOs + "' option at 'OS' radio");
         userProductDetailPage.selectItemAtRadioCheckboxbyText(desktopOs);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 06: Select '"+ desktopSoftware1 + "' option at 'Software' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 06: Select '" + desktopSoftware1 + "' option at 'Software' radio");
         userProductDetailPage.selectItemAtRadioCheckboxbyText(desktopSoftware1);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 07: Select '"+ desktopSoftware2 + "' option at 'Software' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 07: Select '" + desktopSoftware2 + "' option at 'Software' radio");
         userProductDetailPage.selectItemAtRadioCheckboxbyText(desktopSoftware2);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 08: Select '"+ desktopSoftware3 + "' option at 'Software' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 08: Select '" + desktopSoftware3 + "' option at 'Software' radio");
         userProductDetailPage.selectItemAtRadioCheckboxbyText(desktopSoftware3);
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 09: Save the price text");
@@ -120,12 +120,12 @@ public class User_07_Order extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 16: Verify the attribute is displayed at Mini Cart popup");
         Assert.assertEquals(userProductDetailPage.isProductCartAttributeDisplayed(), "Processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]"
-                                                                                                + "\nRAM: " + desktopRam
-                                                                                                + "\nHDD: " + desktopHDD
-                                                                                                + "\nOS: " + desktopOs
-                                                                                                + "\nSoftware: " + desktopSoftware1
-                                                                                                + "\nSoftware: " + desktopSoftware2
-                                                                                                + "\nSoftware: " + desktopSoftware3);
+                + "\nRAM: " + desktopRam
+                + "\nHDD: " + desktopHDD
+                + "\nOS: " + desktopOs
+                + "\nSoftware: " + desktopSoftware1
+                + "\nSoftware: " + desktopSoftware2
+                + "\nSoftware: " + desktopSoftware3);
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Cart - Step 17: Verify the '" + productPrice + "' is displayed at Mini Cart popup");
         Assert.assertEquals(userProductDetailPage.getProductPriceAtMiniCart(), productPrice);
@@ -142,25 +142,25 @@ public class User_07_Order extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 02: Click the 'Edit' link");
         userProductDetailPage = userCartPage.clickToEditLinkAtCartPage(productCart);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 03: Select '"+ editDesktopProcessor + "' option at 'Ram' dropdown");
+        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 03: Select '" + editDesktopProcessor + "' option at 'Ram' dropdown");
         userProductDetailPage.selectItemAtDropdownbyText("product_attribute_1", editDesktopProcessor);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 04: Select '"+ editDesktopRam + "' option at 'Ram' dropdown");
+        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 04: Select '" + editDesktopRam + "' option at 'Ram' dropdown");
         userProductDetailPage.selectItemAtDropdownbyText("product_attribute_2", editDesktopRam);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 05: Select '"+ editDesktopHDD + "' option at 'HDD' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 05: Select '" + editDesktopHDD + "' option at 'HDD' radio");
         userProductDetailPage.selectItemAtRadioCheckboxbyText(editDesktopHDD);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 06: Select '"+ editDesktopOs + "' option at 'OS' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 06: Select '" + editDesktopOs + "' option at 'OS' radio");
         userProductDetailPage.selectItemAtRadioCheckboxbyText(editDesktopOs);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 07: Unselect '"+ desktopSoftware2 + "' option at 'Software' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 07: Unselect '" + desktopSoftware2 + "' option at 'Software' radio");
         userProductDetailPage.unSelectItemAtRadioCheckboxbyText(desktopSoftware2);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart- Step 08: Unselect '"+ desktopSoftware3 + "' option at 'Software' radio");
+        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart- Step 08: Unselect '" + desktopSoftware3 + "' option at 'Software' radio");
         userProductDetailPage.unSelectItemAtRadioCheckboxbyText(desktopSoftware3);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 09: Input '"+ "2" + "' into 'Quantity' textbox");
+        ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 09: Input '" + "2" + "' into 'Quantity' textbox");
         userProductDetailPage.inputToQuantityTextbox("2");
 
         ExtentTestManager.getTest().log(Status.INFO, "Edit Cart - Step 10: Verify the product price is changed");

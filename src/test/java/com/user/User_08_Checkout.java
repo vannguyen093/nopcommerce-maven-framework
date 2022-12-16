@@ -15,9 +15,6 @@ import java.lang.reflect.Method;
 
 public class User_08_Checkout extends BaseTest {
 
-    private WebDriver driver;
-    private String emailAddress, notebooksName, estimateCountry, estimateState, estimateZip, totalPrice, orderNumber;
-    private String firstName, lastName, country, state, city, addressStreet, zipCode, phoneNumber, paymentMethod, shippingMethod;
     UserDataMapper userData;
     Environment env;
     UserHomePO userHomePage;
@@ -28,6 +25,9 @@ public class User_08_Checkout extends BaseTest {
     UserCustomerInfoPO userCustomerInfoPage;
     UserOrdersPO userOrdersPage;
     UserOrdersDetailPO userOrdersDetailPage;
+    private WebDriver driver;
+    private String emailAddress, notebooksName, estimateCountry, estimateState, estimateZip, totalPrice, orderNumber;
+    private String firstName, lastName, country, state, city, addressStreet, zipCode, phoneNumber, paymentMethod, shippingMethod;
 
     @Parameters({"browser", "evnName", "ipAddress", "portNumber", "osName", "osVersion"})
     @BeforeClass

@@ -2,7 +2,6 @@ package pageObjects;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageUIs.BasePageUI;
 import pageUIs.UserHomePageUI;
 
 public class UserHomePO extends BasePage {

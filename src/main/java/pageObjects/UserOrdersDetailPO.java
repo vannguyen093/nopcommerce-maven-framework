@@ -2,9 +2,7 @@ package pageObjects;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageUIs.UserCheckOutPageUI;
 import pageUIs.UserOrdersDetailPageUI;
-import pageUIs.UserOrdersPageUI;
 
 public class UserOrdersDetailPO extends BasePage {
     WebDriver driver;
@@ -15,7 +13,7 @@ public class UserOrdersDetailPO extends BasePage {
 
     public String getOrderNumberTextAtOrdersDetailPage() {
         waitForElementVisible(driver, UserOrdersDetailPageUI.ORDER_NUMBER_TEXT);
-        String orderNumber =  getElementText(driver, UserOrdersDetailPageUI.ORDER_NUMBER_TEXT).substring(8, 11);
+        String orderNumber = getElementText(driver, UserOrdersDetailPageUI.ORDER_NUMBER_TEXT).substring(8, 11);
         return orderNumber;
     }
 

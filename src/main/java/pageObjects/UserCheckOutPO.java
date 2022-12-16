@@ -63,7 +63,7 @@ public class UserCheckOutPO extends BasePage {
 
     public String getOrderNumberTextAtCheckOutPage() {
         waitForElementVisible(driver, UserCheckOutPageUI.ORDER_NUMBER_TEXT);
-        String orderNumber =  getElementText(driver, UserCheckOutPageUI.ORDER_NUMBER_TEXT).substring(15, 18);
+        String orderNumber = getElementText(driver, UserCheckOutPageUI.ORDER_NUMBER_TEXT).substring(15, 18);
         return orderNumber;
     }
 
