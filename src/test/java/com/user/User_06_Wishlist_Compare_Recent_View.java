@@ -81,7 +81,6 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 03: Click the 'Add to wishlist' button");
         userProductDetailPage.clickToProductDetailButtonByText("Add to wishlist");
-//        userProductDetailPage.waitLoadingIconInvisible();
 
         ExtentTestManager.getTest().log(Status.INFO, "Add To Wishlist - Step 04: Verify the add to wishlist success message is displayed");
         Assert.assertEquals(userProductDetailPage.getSuccessMessageText(driver), "The product has been added to your wishlist");
@@ -131,7 +130,6 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 03: Click the 'Add to wishlist' button");
         userProductDetailPage.clickToProductDetailButtonByText("Add to wishlist");
-//        userProductDetailPage.waitLoadingIconInvisible();
 
         ExtentTestManager.getTest().log(Status.INFO, "Remove From Wishlist - Step 04: Verify the add to wishlist success message is displayed");
         Assert.assertEquals(userProductDetailPage.getSuccessMessageText(driver), "The product has been added to your wishlist");
@@ -168,7 +166,6 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userProductPage.clickToButtonByProductTitle(compareProductTitle1, "add-to-compare-list-button");
 
         ExtentTestManager.getTest().log(Status.INFO, "Compare - Step 03: Verify the add to compare success message is displayed");
-//        userProductPage.waitLoadingIconInvisible(driver);
         Assert.assertEquals(userProductPage.getSuccessMessageText(driver), "The product has been added to your product comparison");
         userProductPage.clickToCloseMessageButton(driver);
 
@@ -176,7 +173,6 @@ public class User_06_Wishlist_Compare_Recent_View extends BaseTest {
         userProductPage.clickToButtonByProductTitle(compareProductTitle2, "add-to-compare-list-button");
 
         ExtentTestManager.getTest().log(Status.INFO, "Compare - Step 05: Verify the add to compare success message is displayed");
-//        userProductPage.waitLoadingIconInvisible(driver);
         Assert.assertEquals(userProductPage.getSuccessMessageText(driver), "The product has been added to your product comparison");
         userProductPage.clickToCloseMessageButton(driver);
 
