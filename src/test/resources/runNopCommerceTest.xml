@@ -18,7 +18,7 @@
         <!--            <package name="com.user" />-->
         <!--        </packages>-->
         <classes>
-            <class name="com.user.User_06_Wishlist_Compare_Recent_View"/>
+            <class name="com.admin.Admin_03_Add_Update_Delete_Address"/>
         </classes>
     </test>
 

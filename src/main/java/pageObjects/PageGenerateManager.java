@@ -89,4 +89,7 @@ public class PageGenerateManager {
     public static AdminProductsDetailPO getAdminProductsDetailPage(WebDriver driver) {
         return new AdminProductsDetailPO(driver);
     }
+    public static AdminCustomersPO getAdminCustomersPage(WebDriver driver) {
+        return new AdminCustomersPO(driver);
+    }
 }

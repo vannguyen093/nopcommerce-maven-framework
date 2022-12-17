@@ -567,17 +567,33 @@ public class BasePage {
         clickToElement(driver, BasePageUI.USER_SIDEBAR_MENU_BY_MENU_TEXT, sidebarMenuText);
     }
 
+    /**
+     * Hover to header main menu by enter menu text
+     * @param driver
+     * @param headerMenuText
+     */
     public void hoverToHeaderMenuByMenuText(WebDriver driver, String headerMenuText) {
         waitForElementClickable(driver, BasePageUI.HEADER_MENU_BY_TEXT, headerMenuText);
         hoverMouseToElement(driver, BasePageUI.HEADER_MENU_BY_TEXT, headerMenuText);
     }
 
+    /**
+     * Click to sub header main menu after hover to header main menu by enter menu level 1 text and sub menu level 2 text
+     * @param driver
+     * @param headerMenuText
+     * @param headerSubMenuText
+     */
     public void clickToSubHeaderMenuByText(WebDriver driver, String headerMenuText, String headerSubMenuText) {
         hoverToHeaderMenuByMenuText(driver, headerMenuText);
         waitForElementClickable(driver, BasePageUI.SUB_HEADER_MENU_BY_TEXT, headerMenuText, headerSubMenuText);
         clickToElement(driver, BasePageUI.SUB_HEADER_MENU_BY_TEXT, headerMenuText, headerSubMenuText);
     }
 
+    /**
+     * Click to footer menu by enter footer menu text
+     * @param driver
+     * @param footerMenuText
+     */
     public void clickToFooterMenuLinkByMenuText(WebDriver driver, String footerMenuText) {
         waitForElementClickable(driver, BasePageUI.FOOTER_MENU_BY_MENU_TEXT, footerMenuText);
         clickToElement(driver, BasePageUI.FOOTER_MENU_BY_MENU_TEXT, footerMenuText);
